@@ -3,7 +3,7 @@ import Logo from '@/components/Logo';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Colors } from '@/constants/Colors';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import { Image, Pressable, StyleSheet } from 'react-native';
 
 export default function login() {
@@ -45,7 +45,10 @@ export default function login() {
                     </ThemedText>
                 </Link>
             </ThemedView>
-            <Pressable style={styles.button}>
+            <Pressable
+                onPress={() => router.push('/home')}
+                style={styles.button}
+            >
                 <ThemedText size="lg" style={{ color: 'white' }}>
                     ورود
                 </ThemedText>

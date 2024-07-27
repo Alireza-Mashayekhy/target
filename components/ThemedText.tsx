@@ -7,7 +7,7 @@ export type ThemedTextProps = TextProps & {
     darkColor?: string;
     size?: 'default' | 'sm' | 'xs' | 'lg' | 'xl' | '2xl';
     weight?: 'default' | 'bold' | 'extraBold' | 'dark' | 'thin';
-    font?: 'default' | 'Reyhaneh' | 'Morabba';
+    font?: 'default' | 'Reyhaneh' | 'Morabba' | 'PoetsenOne';
 };
 
 export function ThemedText({
@@ -25,6 +25,7 @@ export function ThemedText({
         Reyhaneh: require('../assets/fonts/Reyhaneh.ttf'),
         Morabba: require('../assets/fonts/Morabba/Morabba-Bold.ttf'),
         Dana: require('../assets/fonts/Dana/Dana-Light.ttf'),
+        PoetsenOne: require('../assets/fonts/PoetsenOne-Regular.ttf'),
     });
 
     if (!fontsLoaded && !fontError) {
@@ -49,6 +50,8 @@ export function ThemedText({
                 font === 'default' ? styles.Dana : undefined,
                 font === 'Reyhaneh' ? styles.Reyhaneh : undefined,
                 font === 'Morabba' ? styles.Morabba : undefined,
+                font === 'PoetsenOne' ? styles.PoetsenOne : undefined,
+
                 style,
             ]}
             {...rest}
@@ -71,4 +74,5 @@ const styles = StyleSheet.create({
     Reyhaneh: { fontFamily: 'Reyhaneh' },
     Morabba: { fontFamily: 'Morabba' },
     Dana: { fontFamily: 'Dana' },
+    PoetsenOne: { fontFamily: 'PoetsenOne' },
 });

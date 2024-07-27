@@ -16,18 +16,6 @@ export default function startPage() {
     return (
         <ThemedView style={styles.page}>
             <Logo />
-            <Pressable
-                onPress={() => {
-                    Appearance.getColorScheme() === 'dark'
-                        ? Appearance.setColorScheme('light')
-                        : Appearance.setColorScheme('dark');
-                }}
-            >
-                <ThemedText font="Reyhaneh" size="xl" weight="thin">
-                    {Appearance.getColorScheme()}
-                    {boxColor}
-                </ThemedText>
-            </Pressable>
             <ThemedView style={[styles.box, { backgroundColor: boxColor }]}>
                 <ThemedText style={[styles.quotations, { bottom: 30 }]}>
                     "
