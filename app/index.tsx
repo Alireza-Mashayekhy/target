@@ -4,7 +4,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { Colors } from '@/constants/Colors';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { Link } from 'expo-router';
-import { Appearance, Image, Pressable, StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 
 export default function startPage() {
     const boxColor = useThemeColor({ light: 'white', dark: '#FFFFFF12' });
