@@ -1,12 +1,18 @@
 import PagesView from '@/components/PagesView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Image, ImageSourcePropType, useColorScheme } from 'react-native';
+import {
+    Image,
+    ImageSourcePropType,
+    Pressable,
+    useColorScheme,
+} from 'react-native';
 import { Circle } from 'react-native-svg';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { Colors } from '@/constants/Colors';
 import ProfileCard from '@/components/ProfileCard';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { router } from 'expo-router';
 
 export default function Profile() {
     interface ListType {
@@ -20,7 +26,7 @@ export default function Profile() {
             darkIcon: require('@/assets/images/icons/white-user-edit.png'),
             icon: require('@/assets/images/icons/user-edit.png'),
             name: 'ویرایش پروفایل',
-            link: '',
+            link: '/edit-profile',
         },
         {
             darkIcon: require('@/assets/images/icons/white-podcast.png'),
@@ -32,7 +38,7 @@ export default function Profile() {
             darkIcon: require('@/assets/images/icons/white-laptop-warning.png'),
             icon: require('@/assets/images/icons/laptop-warning.png'),
             name: 'تمدید اشتراک',
-            link: '',
+            link: '/plan',
         },
         {
             darkIcon: require('@/assets/images/icons/white-database-backup.png'),
@@ -147,6 +153,7 @@ export default function Profile() {
                 {list.map((item) => {
                     return (
                         <ProfileCard
+                            key={item.name}
                             icon={item.icon}
                             darkIcon={item.darkIcon}
                             name={item.name}
@@ -155,6 +162,38 @@ export default function Profile() {
                     );
                 })}
             </ThemedView>
+            <Pressable
+                onPress={() => {
+                    router.push('/');
+                }}
+                style={{
+                    padding: 10,
+                    borderWidth: 1,
+                    borderColor: useThemeColor({
+                        light: Colors.purple,
+                        dark: '#FFFFFF26',
+                    }),
+                    borderRadius: 8,
+                    marginTop: 30,
+                }}
+            >
+                <ThemedView
+                    style={{
+                        flexDirection: 'row',
+                        justifyContent: 'flex-end',
+                        alignItems: 'center',
+                        gap: 10,
+                    }}
+                >
+                    <ThemedText size="sm" style={{ color: 'red' }}>
+                        خروج از حساب کاربری
+                    </ThemedText>
+                    <Image
+                        source={require('@/assets/images/icons/logout.png')}
+                        style={{ width: 18, height: 18 }}
+                    />
+                </ThemedView>
+            </Pressable>
         </PagesView>
     );
 }

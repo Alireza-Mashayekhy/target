@@ -1,9 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
 import { Image, StyleSheet } from 'react-native';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { ThemedView } from '@/components/ThemedView';
@@ -29,6 +27,12 @@ export default function TabLayout() {
                 tabBarStyle: [styles.tabBar, { backgroundColor: tabColor }],
             }}
         >
+            <Tabs.Screen
+                name="plan"
+                options={{
+                    href: null,
+                }}
+            />
             <Tabs.Screen
                 name="profile"
                 options={{
@@ -90,7 +94,7 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="plan"
+                name="schedule"
                 options={{
                     title: 'برنامه هفتگی',
                     tabBarIcon: ({ color, focused }) => (

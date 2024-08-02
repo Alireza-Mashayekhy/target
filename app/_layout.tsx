@@ -40,7 +40,7 @@ export default function RootLayout() {
                 <Stack.Screen name="forgot" options={{ headerShown: false }} />
                 <Stack.Screen name="otp" options={{ headerShown: false }} />
                 <Stack.Screen
-                    name="register"
+                    name="edit-profile"
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

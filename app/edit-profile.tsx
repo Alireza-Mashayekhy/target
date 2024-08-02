@@ -8,7 +8,7 @@ import DatePicker from '@mohamadkh75/react-native-jalali-datepicker';
 import { useState } from 'react';
 import { useThemeColor } from '@/hooks/useThemeColor';
 
-export default function register() {
+export default function EditProfile() {
     const [image, setImage] = useState<string>('');
     const [date, setDate] = useState('');
     const [modalVisible, setModalVisible] = useState(false);

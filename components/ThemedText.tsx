@@ -24,7 +24,8 @@ export function ThemedText({
     const [fontsLoaded, fontError] = useFonts({
         Reyhaneh: require('../assets/fonts/Reyhaneh.ttf'),
         Morabba: require('../assets/fonts/Morabba/Morabba-Bold.ttf'),
-        Dana: require('../assets/fonts/Dana/Dana-Light.ttf'),
+        Dana: require('../assets/fonts/Dana/Dana-Regular.ttf'),
+        DanaBold: require('../assets/fonts/Dana/Dana-Bold.ttf'),
         PoetsenOne: require('../assets/fonts/PoetsenOne-Regular.ttf'),
     });
 
@@ -42,16 +43,19 @@ export function ThemedText({
                 size === 'lg' ? styles.lg : undefined,
                 size === 'xl' ? styles.xl : undefined,
                 size === '2xl' ? styles.xl2 : undefined,
+                font === 'default'
+                    ? weight === 'bold'
+                        ? styles.DanaBold
+                        : styles.Dana
+                    : undefined,
+                font === 'Reyhaneh' ? styles.Reyhaneh : undefined,
+                font === 'Morabba' ? styles.Morabba : undefined,
+                font === 'PoetsenOne' ? styles.PoetsenOne : undefined,
                 weight === 'default' ? styles.defaultWeight : undefined,
                 weight === 'bold' ? styles.bold : undefined,
                 weight === 'extraBold' ? styles.extraBold : undefined,
                 weight === 'dark' ? styles.dark : undefined,
                 weight === 'thin' ? styles.thin : undefined,
-                font === 'default' ? styles.Dana : undefined,
-                font === 'Reyhaneh' ? styles.Reyhaneh : undefined,
-                font === 'Morabba' ? styles.Morabba : undefined,
-                font === 'PoetsenOne' ? styles.PoetsenOne : undefined,
-
                 style,
             ]}
             {...rest}
@@ -74,5 +78,6 @@ const styles = StyleSheet.create({
     Reyhaneh: { fontFamily: 'Reyhaneh' },
     Morabba: { fontFamily: 'Morabba' },
     Dana: { fontFamily: 'Dana' },
+    DanaBold: { fontFamily: 'DanaBold' },
     PoetsenOne: { fontFamily: 'PoetsenOne' },
 });

@@ -80,7 +80,7 @@ export default function startPage() {
                             ورود
                         </ThemedText>
                     </Link>
-                    <Link href={'register'} style={styles.link}>
+                    <Link href={'forgot'} style={styles.link}>
                         <ThemedText
                             size="lg"
                             style={{ textAlign: 'center', color: 'white' }}

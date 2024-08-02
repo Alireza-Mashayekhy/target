@@ -19,7 +19,7 @@ export default function PagesView({ children }: Props) {
             <ThemedView style={styles.header}>
                 <ThemedView style={styles.headerButtons}>
                     <Link href="/" style={styles.icons}>
-                        <Ionicons size={24} name="mail-outline" />
+                        <Ionicons size={20} name="mail-outline" />
                     </Link>
                     <Pressable
                         onPress={() => {
@@ -29,21 +29,21 @@ export default function PagesView({ children }: Props) {
                         }}
                         style={styles.icons}
                     >
-                        <Ionicons size={24} name="contrast-outline" />
+                        <Ionicons size={20} name="contrast-outline" />
                     </Pressable>
                     <Link
                         href="/"
                         style={{
                             backgroundColor: 'white',
                             paddingHorizontal: 12,
-                            paddingVertical: 4,
+                            paddingVertical: 5,
                             borderRadius: 10,
                         }}
                     >
                         <ThemedView style={{ backgroundColor: 'transparent' }}>
                             <Image
                                 source={require('@/assets/images/icons/gem.png')}
-                                style={{ width: 20, height: 20 }}
+                                style={{ width: 15, height: 15 }}
                             />
                             <ThemedText
                                 size="xs"
@@ -109,7 +109,8 @@ const styles = StyleSheet.create({
         borderBottomEndRadius: 26,
         borderBottomStartRadius: 26,
         flexDirection: 'row',
-        padding: 17,
+        padding: 15,
+        paddingVertical: 12,
         position: 'absolute',
         top: 0,
         left: 0,
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
         padding: 32,
         gap: 16,
         overflow: 'hidden',
-        paddingTop: 100,
+        paddingTop: 90,
         paddingHorizontal: 15,
     },
     headerButtons: {
