@@ -34,6 +34,12 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
+                name="aboutUs"
+                options={{
+                    href: null,
+                }}
+            />
+            <Tabs.Screen
                 name="profile"
                 options={{
                     title: 'پروفایل',

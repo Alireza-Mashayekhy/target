@@ -50,7 +50,7 @@ export default function Profile() {
             darkIcon: require('@/assets/images/icons/white-about.png'),
             icon: require('@/assets/images/icons/about.png'),
             name: 'درباره ما',
-            link: '',
+            link: '/aboutUs',
         },
     ];
     return (

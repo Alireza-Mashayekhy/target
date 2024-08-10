@@ -6,6 +6,7 @@ interface PropsType {
     time: string;
     days: number;
     price: number;
+    discountedPrice: number;
 }
 export default function PlanCard(props: PropsType) {
     return (
@@ -24,29 +25,59 @@ export default function PlanCard(props: PropsType) {
             >
                 خرید اشتراک برای {props.days} روز
             </ThemedText>
-            <View style={styles.priceBox}>
-                <ThemedText
-                    size="xs"
-                    style={{
-                        color: 'white',
-                        textAlign: 'center',
-                        lineHeight: 15,
-                    }}
-                >
-                    {props.price
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                </ThemedText>
-                <ThemedText
-                    size="xs"
-                    style={{
-                        color: 'white',
-                        textAlign: 'center',
-                        lineHeight: 15,
-                    }}
-                >
-                    تومان
-                </ThemedText>
+            <View style={{ flexDirection: 'row', gap: 10 }}>
+                <View style={styles.priceBox}>
+                    <ThemedText
+                        size="xs"
+                        style={{
+                            color: 'white',
+                            textAlign: 'center',
+                            lineHeight: 15,
+                            textDecorationLine: 'line-through',
+                            fontSize: 11,
+                        }}
+                    >
+                        {props.price
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                    </ThemedText>
+                    <ThemedText
+                        size="xs"
+                        style={{
+                            color: 'white',
+                            textAlign: 'center',
+                            lineHeight: 15,
+                            textDecorationLine: 'line-through',
+                            fontSize: 11,
+                        }}
+                    >
+                        تومان
+                    </ThemedText>
+                </View>
+                <View style={styles.priceBox}>
+                    <ThemedText
+                        size="xs"
+                        style={{
+                            color: 'white',
+                            textAlign: 'center',
+                            lineHeight: 15,
+                        }}
+                    >
+                        {props.discountedPrice
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                    </ThemedText>
+                    <ThemedText
+                        size="xs"
+                        style={{
+                            color: 'white',
+                            textAlign: 'center',
+                            lineHeight: 15,
+                        }}
+                    >
+                        تومان
+                    </ThemedText>
+                </View>
             </View>
         </View>
     );
@@ -55,7 +86,8 @@ export default function PlanCard(props: PropsType) {
 const styles = StyleSheet.create({
     card: {
         backgroundColor: Colors.purple,
-        flex: 1,
+        // flex: 1,
+        width: '48%',
         alignItems: 'center',
         padding: 15,
         paddingTop: 30,
@@ -73,7 +105,7 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         padding: 5,
         paddingTop: 8,
-        width: '100%',
+        width: '48%',
         borderRadius: 10,
     },
     time: {

@@ -16,17 +16,26 @@ export default function plan() {
         {
             time: 'یک ماهه',
             days: 30,
-            price: 149000,
+            price: 60000,
+            discountedPrice: 49000,
+        },
+        {
+            time: 'سه ماهه',
+            days: 90,
+            price: 180000,
+            discountedPrice: 139000,
         },
         {
             time: 'شش ماهه',
             days: 180,
-            price: 749000,
+            price: 360000,
+            discountedPrice: 249000,
         },
         {
             time: 'یک ساله',
             days: 365,
-            price: 1249000,
+            price: 720000,
+            discountedPrice: 499000,
         },
     ];
     return (
@@ -50,6 +59,7 @@ export default function plan() {
                                     time={plan.time}
                                     days={plan.days}
                                     price={plan.price}
+                                    discountedPrice={plan.discountedPrice}
                                 />
                             );
                         })}
@@ -76,6 +86,7 @@ const styles = StyleSheet.create({
     },
     cards: {
         flexDirection: 'row',
+        flexWrap: 'wrap',
         gap: 12,
         marginTop: 20,
     },
