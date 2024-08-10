@@ -1,11 +1,12 @@
-import { StyleSheet, Image, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Back } from '@/components/Base/Back';
 import { Colors } from '@/constants/Colors';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { Ionicons } from '@expo/vector-icons';
 
-export default function AboutUs() {
+export default function Backup() {
     return (
         <ThemedView style={styles.container}>
             <ThemedView style={styles.content}>
@@ -15,12 +16,20 @@ export default function AboutUs() {
                     size="2xl"
                     style={{ marginTop: 5, textAlign: 'center' }}
                 >
-                    درباره ما
+                    پشتیبان گیری از اطلاعات
                 </ThemedText>
-                <Image
-                    source={require('@/assets/images/logo.png')}
-                    style={{ width: 50, height: 50 }}
-                />
+                <View style={{ width: '100%', alignItems: 'flex-end' }}>
+                    <View style={styles.targetBox}>
+                        <ThemedText style={{ color: 'white' }}>
+                            پشتیان گیری
+                        </ThemedText>
+                        <Ionicons
+                            name="cloud-download-outline"
+                            color="white"
+                            size={20}
+                        />
+                    </View>
+                </View>
                 <View
                     style={[
                         styles.textBox,
@@ -32,11 +41,6 @@ export default function AboutUs() {
                         },
                     ]}
                 >
-                    <View style={styles.targetBox}>
-                        <ThemedText style={{ color: 'white' }}>
-                            تارگت اپ
-                        </ThemedText>
-                    </View>
                     <ScrollView
                         style={{ paddingRight: 15, paddingBottom: 15 }}
                         endFillColor={Colors.purple}
@@ -85,10 +89,57 @@ export default function AboutUs() {
                         </ThemedText>
                     </ScrollView>
                 </View>
-                <Image
-                    source={require('@/assets/images/aboutUs.png')}
-                    style={{ width: 200, height: 170 }}
-                />
+                <Pressable style={styles.button1}>
+                    <ThemedText style={{ color: 'white' }}>
+                        پشتیبان گیری از اطلاعات
+                    </ThemedText>
+                </Pressable>
+                <Pressable
+                    style={[
+                        styles.button2,
+                        {
+                            backgroundColor: useThemeColor({
+                                light: 'white',
+                                dark: '#FFFFFF12',
+                            }),
+                        },
+                    ]}
+                >
+                    <View>
+                        <ThemedText
+                            size="sm"
+                            style={{
+                                color: useThemeColor({
+                                    light: 'black',
+                                    dark: 'white',
+                                }),
+                            }}
+                        >
+                            خام کردن اطلاعات نرم افزار
+                        </ThemedText>
+                        <ThemedText
+                            size="xs"
+                            style={{
+                                color: '#949494',
+                            }}
+                        >
+                            پاک کردن تمامی اطلاعات نرم افزار
+                        </ThemedText>
+                    </View>
+                    <View
+                        style={{
+                            backgroundColor: Colors.purple,
+                            padding: 10,
+                            borderRadius: 8,
+                        }}
+                    >
+                        <Ionicons
+                            name="server-outline"
+                            color="white"
+                            size={20}
+                        />
+                    </View>
+                </Pressable>
             </ThemedView>
         </ThemedView>
     );
@@ -127,9 +178,31 @@ const styles = StyleSheet.create({
     targetBox: {
         backgroundColor: Colors.blue1,
         borderRadius: 7,
-        bottom: 20,
         width: 'auto',
         paddingHorizontal: 20,
         paddingVertical: 5,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 5,
+    },
+    button1: {
+        backgroundColor: Colors.purple,
+        width: '100%',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 8,
+    },
+    button2: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '100%',
+        justifyContent: 'flex-end',
+        gap: 5,
+        elevation: 10,
+        shadowColor: '#222222',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 80,
+        padding: 5,
+        borderRadius: 10,
     },
 });

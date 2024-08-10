@@ -34,6 +34,12 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
+                name="backup"
+                options={{
+                    href: null,
+                }}
+            />
+            <Tabs.Screen
                 name="aboutUs"
                 options={{
                     href: null,

@@ -44,7 +44,7 @@ export default function Profile() {
             darkIcon: require('@/assets/images/icons/white-database-backup.png'),
             icon: require('@/assets/images/icons/database-backup.png'),
             name: 'پشتیبان گیری از اطلاعات',
-            link: '',
+            link: '/backup',
         },
         {
             darkIcon: require('@/assets/images/icons/white-about.png'),
