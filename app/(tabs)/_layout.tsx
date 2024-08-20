@@ -46,6 +46,18 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
+                name="notebook"
+                options={{
+                    href: null,
+                }}
+            />
+            <Tabs.Screen
+                name="learn"
+                options={{
+                    href: null,
+                }}
+            />
+            <Tabs.Screen
                 name="profile"
                 options={{
                     title: 'پروفایل',

@@ -32,7 +32,7 @@ export default function Profile() {
             darkIcon: require('@/assets/images/icons/white-podcast.png'),
             icon: require('@/assets/images/icons/podcast.png'),
             name: 'آموزشی',
-            link: '',
+            link: '/learn',
         },
         {
             darkIcon: require('@/assets/images/icons/white-laptop-warning.png'),
