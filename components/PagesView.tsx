@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         paddingTop: 90,
         paddingHorizontal: 15,
+        paddingBottom: 100,
     },
     headerButtons: {
         flexDirection: 'row',

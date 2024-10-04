@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { Colors } from '@/constants/Colors';
 import { ThemedText } from '../ThemedText';
 import Swiper from 'react-native-swiper';
+
+const { width } = Dimensions.get('window');
 
 export const WeekBox = () => {
     const backBoxColor = useThemeColor({
         light: Colors.blue1,
         dark: '#FFFFFF10',
     });
+
     return (
         <Swiper
             showsButtons
@@ -16,19 +19,32 @@ export const WeekBox = () => {
             style={{
                 overflow: 'visible',
                 height: 100,
-                flexDirection: 'row-reverse',
             }}
             showsPagination={false}
             nextButton={
-                <Text style={{ color: 'white', fontSize: 50, bottom: 5 }}>
+                <Text
+                    style={{
+                        color: 'white',
+                        fontSize: 50,
+                        right: 30,
+                        bottom: 5,
+                    }}
+                >
                     ›
                 </Text>
             }
             prevButton={
-                <Text style={{ color: 'white', fontSize: 50, bottom: 5 }}>
+                <Text
+                    style={{
+                        color: 'white',
+                        fontSize: 50,
+                        bottom: 5,
+                    }}
+                >
                     ‹
                 </Text>
             }
+            containerStyle={{ width: width }}
         >
             <View style={[style.card, { backgroundColor: backBoxColor }]}>
                 <ThemedText size="xl" style={{ color: 'white' }}>
@@ -51,10 +67,11 @@ export const WeekBox = () => {
 
 const style = StyleSheet.create({
     card: {
+        width: width - 30,
         height: '100%',
-        width: '100%',
-        alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 15,
+        alignItems: 'center',
+        backgroundColor: '#9DD6EB',
+        borderRadius: 10,
     },
 });

@@ -52,6 +52,12 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
+                name="createNote"
+                options={{
+                    href: null,
+                }}
+            />
+            <Tabs.Screen
                 name="learn"
                 options={{
                     href: null,
@@ -188,9 +194,15 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         paddingBottom: 10,
         height: 60,
-        elevation: 10,
         shadowColor: '#222222',
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 80,
+        position: 'absolute',
+        bottom: 20,
+        left: 10,
+        right: 10,
+        elevation: 10,
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        borderRadius: 15,
     },
 });
